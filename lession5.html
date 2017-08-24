@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app5.js"></script>
+<body>
+
+If you want to 
+
+<div ng-controller="myController">
+  <input type="text" ng-model="greetings" />
+  <p>{{ message }}</p>
+  <!-- two way data binding-->
+  <p>{{ message }}</p>
+  <p>{{ greetings }}</p>
+  
+  <p> Two way data binding advantages in comple code : </p>
+  
+  <table>
+      <tr>
+          <td>First Name :</td>
+          <td><input type="text" name="" ng-model="employee.fname"></td>
+      </tr>
+      <tr>
+          <td>Last Name :</td>
+          <td><input type="text" name="" ng-model="employee.lname"></td>
+      </tr>
+      <tr>
+          <td>Gender :</td>
+          <td><input type="text" name="" ng-model="employee.gender"></td>
+      </tr>
+      
+  </table>
+  <br>
+  
+  <table>
+      <tr>
+          <td>First Name :</td>
+          <td> {{employee.fname}} </td>
+      </tr>
+      <tr>
+          <td>Last Name :</td>
+          <td> {{employee.lname}} </td>
+      </tr>
+      <tr>
+          <td>Gender :</td>
+          <td> {{employee.gender}} </td>
+      </tr>
+      
+  </table>
+  
+  
+  
+  
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app6.js"></script>
+<body>
+
+ng-repeat example
+
+<div ng-controller="myController">
+  
+  <table>
+      <tr>
+          <th>First Name </th>
+          <th>Last Name </th>
+          <th>Gender  </th>
+          <th>Salery </th>
+          
+      </tr>
+      <tr ng-repeat="emp in employees">
+          <td>{{emp.firstName}}</td>
+          <td>{{emp.lastName}}</td>
+          <td>{{emp.gender}}</td>
+          <td>{{emp.salary}}</td>
+      </tr>
+      
+  </table>
+  
+  <p>
+      Nesting of ng-repeat
+  </p>
+  <ul>
+      <li ng-repeat="country in countries"> {{ country.name }} 
+      <ol>
+          <li ng-repeat="city in country.cities"> {{ city.name}} </li>
+      </ol>
+      </li>
+  </ul>
+  
+  
+  <p>
+      Index and parent index
+  </p>
+  <ul>
+      <li ng-repeat="country in countries"> {{ country.name }} - Parent Index - {{ $parent.$index }}, - Index - {{ $index }} 
+      <ol>
+          <li ng-repeat="city in country.cities"> {{ city.name }}  - Parent Index - {{ $parent.$index }}, - Index - {{ $index }} </li>
+      </ol>
+      </li>
+  </ul>
+  
+    
+  <p>
+      Parent Index second way
+  </p>
+  <ul>
+      <li ng-repeat="country in countries" ng-init="parentIndex=$index"> {{ country.name }} 
+      <ol>
+          <li ng-repeat="city in country.cities"> {{ city.name}} - Parent Index {{ parentIndex }} </li>
+      </ol>
+      </li>
+  </ul>
+  
+  
+</div>
+
+
+</body>
+
+</html>
