@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app16.js"></script>
+<script src= "app/filter.js"></script>
+<title>ng init directive in AngularJS</title>
+<body>
+<body  ng-controller="myController">
+   <!-- optino 1 -->
+    <!--<div ng-include="'employee-table.html'">        
+    </div>-->
+    
+    <!-- option 2 -->
+    
+    <!--<div ng-include="employeeView">        
+    </div>-->
+    
+    
+    <!-- how to use table view and list view in html  -->
+    <select ng-model="empView" id="">
+        <option value="listview.html">List VIew</option>
+        <option value="employee-table.html">Table VIew</option>
+    </select>
+    <div ng-include="empView">        
+    </div
+    
+    
+</body>
+</html>

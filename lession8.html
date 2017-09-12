@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app8.js"></script>
+<body>
+
+Filter in angular js
+
+<div ng-controller="myController">
+ <p>Rows to Display: <input type="number" step="1" min="0" max="5" ng-model="rowLimit" /></p>
+ <p>Short By: 
+    <select name="" id=""> 
+        <option value=""></option>
+    </select>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>D.O.B</th>
+            <th>Gender</th>
+            <th>Salery</th>
+            <th>Currency</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in employees | limitTo:rowLimit ">
+            <td> {{ employee.name | uppercase }} </td>
+            <td> {{ employee.dateOfBirth | date:"dd/MM/yy" }} </td>
+            <td> {{ employee.gender | lowercase }} </td>
+            <td> {{ employee.salary | number:2 }} </td>
+            <td> {{ employee.salary | currency:"&pound;":1 }} </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+</body>
+
+</html>

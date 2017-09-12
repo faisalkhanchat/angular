@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app14.js"></script>
+<script src= "app/filter.js"></script>
+<title>ng hide and ng show in AngularJS</title>
+<body>
+
+<h1>ng hide and ng show in AngularJS</h1>
+
+
+<div ng-controller="myController">
+<input type="checkbox" ng-model="salaryHide"> Salary Hide
+<input type="checkbox" ng-model="salaryShow"> City Show
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th  ng-hide="salaryHide">Salery</th>
+            <th ng-show="salaryShow">City</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in employees">
+            <td> {{ employee.name  }} </td>
+            <td> {{ employee.gender | gender }} </td>
+            <td ng-hide="salaryHide"> {{ employee.salary | number:2 }} </td>
+            <td ng-show="salaryShow"> {{ employee.city }} </td>
+            
+            
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+
+</body>
+
+</html>

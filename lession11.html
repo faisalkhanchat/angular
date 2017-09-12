@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app11.js"></script>
+<body>
+
+<h3>Sarch Filter by multiple properties in angular js.</h3>
+
+Search in all over the table:
+<div ng-controller="myController">
+ <p>Search By: <input type="search" placeholder="Search employees" ng-model="searchText">
+</p>
+<br>
+<br>
+
+
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Gender</td>
+            <td>Salery</td>
+            <td>City</td>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in employees | filter:searchText">
+            <td> {{ employee.name | uppercase }} </td>
+            <td> {{ employee.gender | date:"dd/MM/yy" }} </td>
+            <td> {{ employee.salary | number:2 }} </td>
+            <td> {{ employee.city }} </td>
+            
+            
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+Search in a pirticular column in city
+<div ng-controller="myController">
+ <p>Search By: <input type="search" placeholder="Search employees" ng-model="searchText2.city">
+</p>
+
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Gender</td>
+            <td>Salery</td>
+            <td>City</td>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in employees | filter:searchText2">
+            <td> {{ employee.name | uppercase }} </td>
+            <td> {{ employee.gender | date:"dd/MM/yy" }} </td>
+            <td> {{ employee.salary | number:2 }} </td>
+            <td> {{ employee.city }} </td>
+            
+            
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+
+</body>
+
+</html>

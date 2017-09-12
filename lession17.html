@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app17.js"></script>
+<script src= "app/filter.js"></script>
+<title>Angular JS Services</title>
+<body>
+<body ng-app="myModule" ng-controller="myController">
+   Data List View
+   <ul>
+    <li ng-repeat="record in customers">
+            {{record.Name}}
+        
+    </li>
+    
+</ul>
+    
+Data in Table 
+
+<table>
+    <tr ng-repeat="rec in records">
+        <td> {{$index + 1}} </td>
+        <td> {{rec.Name}} </td>
+        <td> {{rec.City}} </td>
+    </tr>
+</table>
+
+</body>
+</html>

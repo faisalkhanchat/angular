@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app7.js"></script>
+<body>
+
+ng-repeat example
+
+<div ng-controller="myController">
+  
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Likes</th>
+            <th>Dislike</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="technology in technologies">
+            <td> {{ technology.name }} </td>
+            <td> {{ technology.likes }} </td>
+            <td> {{ technology.dislikes }} </td>
+            <td><input type="button" value="Likes" ng-click="incrementLikes(technology)"></td>
+            <td><input type="submit" value="Dislikees" ng-click="incrementDislikes(technology);"></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+</body>
+
+</html>

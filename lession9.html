@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app9.js"></script>
+<body>
+
+Filter in angular js
+
+<div ng-controller="myController">
+ <p>Short By: 
+    <select name="" id="" ng-model="sortColumn"> 
+        <option selected value="name">Name ASC</option>
+        <option value="gender">Gender ASC</option>
+        <option value="dateOfBirth">D.O.B. ASC</option>
+        <option value="-salary">Salery DSC</option>
+    </select>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th ng-click="sortData('name')">
+                Name <div ng-class="getSortClass('name')"></div>
+            </th>
+            <th ng-click="sortData('dateOfBirth                                                                                                         ')">
+                D.O.B <div ng-class="getSortClass('dateOfBirth')"></div>
+            </th>
+            <th ng-click="sortData('gender')">
+                Gender <div ng-class="getSortClass('gender')"></div>
+            </th>
+            <th ng-click="sortData('salery')">
+                Salery <div ng-class="getSortClass('salery')"></div>
+            </th>
+            <th ng-click="sortData('salery')">
+                Currency <div ng-class="getSortClass('salery')"></div>
+            </th>
+            
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="employee in employees | orderBy:sortColumn:reverseSort">
+            <td> {{ employee.name | uppercase }} </td>
+            <td> {{ employee.dateOfBirth | date:"dd/MM/yy" }} </td>
+            <td> {{ employee.gender | lowercase }} </td>
+            <td> {{ employee.salary | number:2 }} </td>
+            <td> {{ employee.salary | currency:"&pound;":1 }} </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+</body>
+
+</html>

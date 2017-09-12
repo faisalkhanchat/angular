@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app20.js"></script>
+<script src= "app/stringService.js"></script>
+<script src= "app/filter.js"></script>
+<title>Angular JS Services</title>
+<body>
+<body ng-app="myModule" ng-controller="myController">
+
+Creating custom service
+using custom you can use the same code in any cntroller it increases resuability dependency injections, and fast
+<table>
+    <tr>
+        <td>Your String </td>
+        <td><input type="text" ng-model="input" /></td>
+    </tr>
+    <tr>
+        <td>Result  </td>
+        <td><input type="text" ng-model="output"></td>
+    </tr>
+    <tr>
+        <td>  </td>
+        <td><input type="submit" ng-click="transformString(input)" value="Process String"></td>
+    </tr>
+    
+    
+</table>
+
+</body>
+</html>
