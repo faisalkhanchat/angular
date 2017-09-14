@@ -42,3 +42,12 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
   background-color: #ffffff;
 }
+
+
+.anchordiv {
+    width: 400px;
+    border: 1px solid black;
+    font-family: Arial;
+    font-size: large;
+    padding: 5px;
+}
