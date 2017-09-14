@@ -1,5 +1,4 @@
-var myApp = angular
-.module("myApp",[])
+var myApp = angular.module("myApp",[])
 .controller("myController", function ($scope){
     
     var employee = {
