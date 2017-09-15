@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myModule">
+    <head>
+<title>Angular JS Services: anchor scroll with database data</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="angular/angular.js"></script>
+<script src= "app/app22.js"></script>
+        
+</head>
+
+<body ng-controller="myController">
+<h1> {{name}} </h1>
+<div class="" >
+    <ul>
+        <li  ng-repeat="country in countryCity"> {{country.name}} 
+        <ol>
+            <li  ng-repeat="city in country.cities"> {{city.name}} </li>
+        </ol>
+        </li>
+    </ul>
+    <br><br>
+<!--    <div class="containerDiv">
+        <fieldset ng-repeat="country in countryCity" id="country.name">
+            <legend>{{country.name}}</legend>
+            <ul>
+                <li ng-repeat="city in country.cities"> {{city.name}} </li>
+            </ul>
+        </fieldset>
+    </div>-->
+</div>
+
+</body>
+</html>
+
+
