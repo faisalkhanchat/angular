@@ -1,10 +1,9 @@
 <?php
-/*
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 $conn = new mysqli("localhost", "root", "", "customer");
-$country = $conn->query("SELECT name,id FROM tblcountry");
-$city = $conn->query("SELECT name, 	countryid FROM tblcity");
+$country = $conn->query("Select tblcountry.id, tblcountry.name, tblcity.cities FROM tblcountry INNER JOIN tblcity ON tblcountry.id = tblcity.countryid");
+/*$city = $conn->query("SELECT name, 	countryid FROM tblcity");
 $arr=array('record'=>array('country'=>array(
     'india'=>array(
         'city'=>array('noida','gzb')
@@ -17,23 +16,22 @@ $arr=array('record'=>array('country'=>array(
     )
 )
                           )
-          );
-echo json_encode($arr);exit;
+          );*/
+//echo json_encode($arr);exit;
 $outp = "";
 while($rs = $country->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {$outp .= ",";}
-    $outp .= '{"Countries":"'  . $rs["name"] . '"}';
-   //  $outp .= '"City":"'   . $rs["city"]        . '",';
-   // $outp .= '"Country":"'. $rs["country"]     . '"}';
+    $outp .= '{"name":"'  . $rs["name"] . '"}';
+   //  $outp .= '"Cities":"'   . $rs["Cities"]        . '",';
+    $outp .= '"Cities":"'. $rs["cities"]     . '"}';
     
-    while($rs = $city->fetch_array(MYSQLI_ASSOC)) {
+    /*while($rs = $city->fetch_array(MYSQLI_ASSOC)) {
         
-    }
+    }*/
 }
 $outp ='{"records":['.$outp.']}';
 $conn->close();
 echo($outp);
-*/
 
 ?>
 <?php
@@ -48,7 +46,7 @@ echo($outp);
         $dbh = new PDO("mysql:host=$hostname;dbname=$db_name", $username, $password);
 
         // a query get all the records from the users table
-        $sql = 'SELECT name FROM tblcountry';
+        $sql = 'Select tblcountry.id, tblcountry.name, tblcity.cities FROM tblcountry INNER JOIN tblcity ON tblcountry.id = tblcity.countryid';
 
         // use prepared statements, even if not strictly required is good practice
         $stmt = $dbh->prepare( $sql );
@@ -65,4 +63,4 @@ echo($outp);
         // echo the json string
         echo $json;*/
 ?>
-[{"name":"India","cities":[{"name":"Noida"},{"name":"Delhi"}]},{"name":"USA","cities":[{"name":"NewYark"},{"name":"Washingatom"}]},{"name":"UK","cities":[{"name":"loswagas"},{"name":"Birmingham"}]}]
+//[{"name":"India","cities":[{"name":"Noida"},{"name":"Delhi"}]},{"name":"USA","cities":[{"name":"NewYark"},{"name":"Washingatom"}]},{"name":"UK","cities":[{"name":"loswagas"},{"name":"Birmingham"}]}] 
